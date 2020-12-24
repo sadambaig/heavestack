@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -40,5 +40,31 @@ class LoginController extends Controller
     public function username()
         {
             return 'username';
+        }
+        $user = Auth::user(); 
+         
+          $role=$user->role->pluck('roleName')->first();
+
+          //dd($role);
+        
+          switch ($role) {
+            case 'manager':
+
+              return '/manager/dashboard';
+            break;
+            case 'admin':
+              //return '/admin/dashboard';
+            break; 
+            case 'employee':
+                echo "emaployee";
+            break;
+            case 'intern':
+                echo "intrn";
+            break;
+
+            default:
+              return '/login'; 
+            break;
+          }
         }
 }
