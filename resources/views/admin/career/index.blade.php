@@ -35,8 +35,9 @@
                                             <th>Salary</th>
                                             <th>Last Date</th>
                                             <th>Job Type</th>
-                                            <th>Active</th>
+                                            
                                             <th>Created</th>
+                                            <th>Active</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -58,11 +59,11 @@
                                             <td>{{ $job->salary }}</td>
                                             <td>{{ $job->last_date }}</td>
                                             <td>{{ $job->type }}</td>
+                                            
+                                            <td>{{ $job->created_at }}</td>
                                             <td>
                                                 <a href="{{ route('change.job.status',['id'=>$job->id]) }}" title="" class="badge {{ ($job->active=='active')?'badge-success':'badge-warning' }}">{{ $job->active }}</a>
                                                 </td>
-                                            <td>{{ $job->created_at }}</td>
-                                            
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-dark btn-sm">Action</button>
@@ -70,7 +71,7 @@
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference6">
-                                                        <a class="dropdown-item" href="#">View </a>
+                                                        <a class="dropdown-item" data-toggle='modal' href="#jobView">View </a>
                                                       <a class="dropdown-item" href="{{ route('job.show',['id'=>$job->id]) }}">Edit</a>
                                                       <a class="dropdown-item delete-job" href="{{ route('job-delete',['id'=>$job->id]) }}">Delete </a>
                                                      
@@ -84,6 +85,27 @@
                                 </table></div>
                                 <button type="submit" class="btn btn-primary">Delete All</button>
                             </form></div></div>
+                            <!-- modal -->
+                                <div class="modal fade rotateInDownLeft" id="jobView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Job Title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                 
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-danger" data-dismiss="modal"><i class="flaticon-cancel-12"></i> Discard</button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- end modal -->
                             </div>
                         </div>
                     </div>
@@ -104,6 +126,7 @@
     <link href="{{asset('public/plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('public/plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('public/assets/css/components/custom-sweetalert.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 @endsection
 @section('scripts')

@@ -54,11 +54,13 @@
                                     <option>Web Designer</option>
                                     <option>Andriod </option>
                                 </select>
-                                <span class="text-danger">{{ $errors->first('tags') }}</span>
+                                @foreach(json_decode($job->tags) as $value)
+                                <span class="badge badge-primary">{{ $value }}</span>
+                                @endforeach
                               </div>
                               <div class="form-group">
                                   <label>Last Date</label>
-                                  <input id="basicFlatpickr" value="{{ old('last_date') }}" value="{{ $job->last_date }}" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date.." readonly="readonly" name="last_date">
+                                  <input id="basicFlatpickr"  value="{{ $job->last_date }}" class="form-control flatpickr flatpickr-input active" type="text" placeholder="Select Date.." readonly="readonly" name="last_date">
                                   <span class="text-danger">{{ $errors->first('last_date') }}</span>
                               </div>
                               <div class="form-group">
@@ -133,7 +135,7 @@
             reader.onload = function (e) {
                
                 $('.show-image').attr('src','');
-                $('.icon-image').slideToggle('slow');
+                
                 $('.show-image').attr('src',e.target.result);
             }
             reader.readAsDataURL(input.files[0]);

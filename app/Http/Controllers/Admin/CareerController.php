@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\Job;
+use Alert;
 class CareerController extends Controller
 {
     //
@@ -79,8 +80,55 @@ class CareerController extends Controller
     	return redirect()->back()->with('success','job deleted');
     }
     public function show($id){
+
     	$job=Job::findOrFail($id);
-    	dd($job);
-    	return view('admin.career.update',compact('job'));
+        return view('admin.career.update',compact('job'));
+    }
+    public function update(Request $request){
+    	$jobs=Job::findOrFail($request->id);
+    	$validateData=$request->validate([
+    		'title'=>'required',
+    		'desc'=>'required',
+    		's_desc'=>'required',
+    		'type'=>'required',
+    		'last_date'=>'required',
+    		'salary'=>'required',
+
+    	]);
+    	if($request->has('icon')){
+    		$request->validate([
+    			'icon'=>'image|mimes:jpg,png,jpeg',
+    		]);
+    		$delete_path=public_path().'/images/job_images/'.$jobs->icon;
+    		if(file_exists($delete_path)){
+    			unlink($delete_path);
+    		}
+    		$icon=$request->icon;
+    		$name=time().'.'.$icon->getClientOriginalExtension();
+    		$path=public_path().'/images/job_images/';
+    		$icon->move($path,$name);
+    		$jobs->icon=$name;
+    		$jobs->save();
+
+    	   }
+    	   if($request->tags){
+    	   	$jobs->tags=json_encode($request->tags);
+    	   	$jobs->save();
+    	   }
+    	   $jobs->title=$request->title;
+    	   $jobs->s_desc=$request->s_desc;
+    	   $jobs->desc=$request->desc;
+    	   $jobs->type=$request->type;
+    	   $jobs->last_date=$request->last_date;
+    	   
+    	   $jobs->salary=$request->salary;
+    	   $jobs->active=$request->active;
+    	   $save=$jobs->save();
+    	   if($save){
+    	   	return redirect('/careers')->with('success','updated successfully');
+    	   }else{
+    	   	return redirect()->back()->with('info','something went wrong please try again');
+    	   }
+
     }
 }
