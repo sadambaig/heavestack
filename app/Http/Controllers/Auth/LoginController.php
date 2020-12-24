@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Auth;
 class LoginController extends Controller
 {
     /*
@@ -41,6 +41,7 @@ class LoginController extends Controller
         {
             return 'username';
         }
+    public function redirectTo() {
         $user = Auth::user(); 
          
           $role=$user->role->pluck('roleName')->first();
@@ -50,7 +51,7 @@ class LoginController extends Controller
           switch ($role) {
             case 'manager':
 
-              return '/manager/dashboard';
+              return '/dashboard';
             break;
             case 'admin':
               //return '/admin/dashboard';

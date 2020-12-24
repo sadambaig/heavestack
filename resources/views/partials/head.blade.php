@@ -19,7 +19,8 @@
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link href="{{asset('public/plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('public/assets/css/dashboard/dash_2.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/css/toast.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/toast/toast.css') }}">
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('public/fontawesome/css/all.css') }}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     @yield('styles')

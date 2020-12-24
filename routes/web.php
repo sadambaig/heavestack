@@ -17,9 +17,15 @@ use App\Http\Controllers\Admin\CareerController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth'],function(){
 	Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 	Route::get('/careers',[CareerController::class,'career'])->name('admin.career');
+	Route::get('/create-job',[CareerController::class,'create'])->name('job.create');
+	Route::post('/job-store',[CareerController::class,'store'])->name('job.store');
+	Route::get('/change-job-status/{id}',[CareerController::class,'changeJobStatus'])->name('change.job.status');
+	Route::get('/job-delete/{id}',[CareerController::class,'destroy'])->name('job-delete');
+	Route::get('/job-show/{id}',[CareerController::class,'show'])->name('job.show');
+	Route::post('/job-update',[CareerController::class,'update'])->name('job.update');
 });
 
 

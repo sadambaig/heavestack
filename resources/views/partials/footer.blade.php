@@ -16,7 +16,8 @@
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="{{ asset('public/plugins/apex/apexcharts.min.js')}}"></script>
     <script src="{{asset('public/assets/js/dashboard/dash_2.js')}}"></script>
-    <script src="{{asset('public/js/toast.js')}}"></script>
+    <script src="{{asset('public/toast/toast.js')}}"></script>
+    
     <script>
         @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");

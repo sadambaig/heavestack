@@ -1,4 +1,5 @@
 @include('partials.head')
+
 <body class="alt-menu sidebar-noneoverflow">
 @include('partials.header')
 

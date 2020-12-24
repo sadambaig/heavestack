@@ -19,16 +19,16 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        if (Auth::guard($guard)->check()) {
+        if (Auth::guard($guards)->check()) {
             $user = Auth::user(); 
             $role=$user->role->pluck('roleName')->first();
            // dd($role);
             switch ($role) {
                 case 'manager':
-                  return redirect('/admin/dashboard');
+                  return redirect('/dashboard');
                   break;
                 case 'admin':
-                  return redirect('/admin/dashboard');
+                  return redirect('/dashboard');
                   break; 
 
                 default:

@@ -19,103 +19,71 @@
                         {{-- 2nd coloum --}}
                         <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
+                            <a href="{{ route('job.create') }}" title="" class="btn btn-primary">Create New Job</a>
+                            <form action="" method="post">
+                                          
                            <div class="table-responsive mb-4 mt-4">
                                 
                                 
                                   <table id="html5-extension" class="table table-hover dataTable no-footer" style="width: 100%;" role="grid" aria-describedby="html5-extension_info">
                                     <thead>
-                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 157px;">Name</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 243px;">Position</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 108px;">Office</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 47px;">Age</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 124px;">Start date</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 82px;">Salary</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 67px;">Extn.</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Avatar: activate to sort column ascending" style="width: 83px;">Avatar</th><th class="sorting" tabindex="0" aria-controls="html5-extension" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 115px;">Action</th></tr>
+                                        <tr role="row">
+                                            <th><input type="checkbox" name="row" ></th>
+                                            <th>image</th>
+                                            <th>Title</th>
+                                           
+                                            <th>Salary</th>
+                                            <th>Last Date</th>
+                                            <th>Job Type</th>
+                                            <th>Active</th>
+                                            <th>Created</th>
+                                            <th>Action</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                    <tr role="row">
-                                            <td class="sorting_1">Brielle Williamson</td>
-                                            <td>Integration Specialist</td>
-                                            <td>New York</td>
-                                            <td>61</td>
-                                            <td>2012/12/02</td>
-                                            <td>$372,000</td>
-                                            <td>4804</td>
+                                          
+                                           
+                                        @foreach($jobs as $job)
+                                        <tr role="row">
+                                            <td ><input type="checkbox" name="id" value="{{ $job->id }}"></td>
                                             <td>
                                                 <div class="d-flex">
                                                     <div class="usr-img-frame mr-2 rounded-circle">
-                                                        <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
+                                                        <img alt="avatar" class="img-fluid rounded-circle" src="{{ asset('public/images/job_images/'.$job->icon) }}">
                                                     </div>
                                                 </div>
-                                            </td>
+                                                </td>
+                                            <td>{{ $job->title }}</td>
+                                            
+                                            <td>{{ $job->salary }}</td>
+                                            <td>{{ $job->last_date }}</td>
+                                            <td>{{ $job->type }}</td>
+                                            <td>
+                                                <a href="{{ route('change.job.status',['id'=>$job->id]) }}" title="" class="badge {{ ($job->active=='active')?'badge-success':'badge-warning' }}">{{ $job->active }}</a>
+                                                </td>
+                                            <td>{{ $job->created_at }}</td>
+                                            
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-dark btn-sm">Open</button>
+                                                    <button type="button" class="btn btn-dark btn-sm">Action</button>
                                                     <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuReference6">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Separated link</a>
+                                                        <a class="dropdown-item" href="#">View </a>
+                                                      <a class="dropdown-item" href="{{ route('job.show',['id'=>$job->id]) }}">Edit</a>
+                                                      <a class="dropdown-item delete-job" href="{{ route('job-delete',['id'=>$job->id]) }}">Delete </a>
+                                                     
+                                                      
                                                     </div>
                                                   </div>
                                             </td>
-                                        </tr><tr role="row">
-                                            <td class="sorting_1">Caesar Vance</td>
-                                            <td>Pre-Sales Support</td>
-                                            <td>New York</td>
-                                            <td>21</td>
-                                            <td>2011/12/12</td>
-                                            <td>$106,450</td>
-                                            <td>8330</td>
-                                            <td>
-                                                <div class="d-flex">
-                                                    <div class="usr-img-frame mr-2 rounded-circle">
-                                                        <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy-2.png">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-dark btn-sm">Open</button>
-                                                    <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference23" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference23">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Separated link</a>
-                                                    </div>
-                                                  </div>
-                                            </td>
-                                        </tr></tbody>
-                                </table></div></div></div>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table></div>
+                                <button type="submit" class="btn btn-primary">Delete All</button>
+                            </form></div></div>
                             </div>
                         </div>
                     </div>
@@ -133,6 +101,9 @@
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/table/datatable/datatables.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/table/datatable/custom_dt_html5.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/table/datatable/dt-global_style.css')}}">
+    <link href="{{asset('public/plugins/sweetalerts/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('public/plugins/sweetalerts/sweetalert.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('public/assets/css/components/custom-sweetalert.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL CUSTOM STYLES -->
 @endsection
 @section('scripts')
@@ -142,6 +113,8 @@
     <script src="{{ asset('public/plugins/table/datatable/button-ext/jszip.min.js')}}"></script>    
     <script src="{{ asset('public/plugins/table/datatable/button-ext/buttons.html5.min.js')}}"></script>
     <script src="{{ asset('public/plugins/table/datatable/button-ext/buttons.print.min.js')}}"></script>
+    <script src="{{asset('public/plugins/sweetalerts/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('public/plugins/sweetalerts/custom-sweetalert.js')}}"></script>
     <script>
         $('#html5-extension').DataTable( {
             dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -164,6 +137,48 @@
             "lengthMenu": [7, 10, 20, 50],
             "pageLength": 7 
         } );
+    </script>
+    <script>
+        $(function() {
+            $('.delete-job').on('click',function(e){
+                 e.preventDefault();
+                 
+                 var url=$(this).attr('href');
+                 swal({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Delete',
+                  padding: '2em'
+                }).then(function(result) {
+                  if (result.value) {
+                    $.ajax({
+                        url:url,
+                        method:"GET",
+                        success:function(response){
+                          const toast = swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            padding: '2em'
+                          });
+
+                          toast({
+                            type: 'success',
+                            title: 'Deleted Successfully',
+                            padding: '2em',
+                          })
+                            location.reload();  
+                        }
+                    });
+                    
+                  }
+                })
+                 
+            })
+        });
     </script>
     <!-- END PAGE LEVEL CUSTOM SCRIPTS -->
 @endsection
