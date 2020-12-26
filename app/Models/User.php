@@ -53,4 +53,20 @@ class User extends Authenticatable
             }
         }
     }
+    public function setStatusAttribute($value)
+    {
+        if($value=='on'){
+            $active=1;
+        }else{
+            $active=0;
+        }
+        $this->attributes['status'] = $active;
+    }
+    public function getStatusAttribute($value){
+        if($value==1){
+            return $value='active';
+        }else{
+            return $value='in-active';
+        }
+    }
 }

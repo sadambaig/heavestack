@@ -22,7 +22,7 @@
         @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");
         @elseif(Session::has('info'))
-        toastr.success("{{ Session::get('info') }}");
+        toastr.error("{{ Session::get('info') }}");
         @endif
     </script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->

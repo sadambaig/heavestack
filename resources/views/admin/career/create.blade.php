@@ -41,8 +41,8 @@
                               <div class="form-group">
                                 <label>Job Type</label>
                                   <select name="type" class="form-control">
-                                      <option value="Employee">Employee</option>
-                                      <option value="Interni">Interni</option>
+                                      <option value="Job">Job</option>
+                                      <option value="Internship">Internship</option>
                                   </select>
                                   <span class="text-danger">{{ $errors->first('type') }}</span>
                               </div>
@@ -61,13 +61,13 @@
                                   <span class="text-danger">{{ $errors->first('last_date') }}</span>
                               </div>
                               <div class="form-group">
-                                  <label>Short Description</label>
-                                  <textarea name="s_desc" class="form-control">{{ old('s_desc') }}</textarea>
+                                  <label>Requirements</label>
+                                  <textarea name="s_desc" id="req" class="form-control textarea">{{ old('s_desc') }}</textarea>
                                   <span class="text-danger">{{ $errors->first('s_desc') }}</span>
                               </div>
                               <div class="form-group">
-                                <label>Job Description</label>
-                                <textarea name="desc" class="form-control">{{ old('desc') }}</textarea>
+                                <label>Responsibilities</label>
+                                <textarea name="desc" id="res" class="form-control textarea">{{ old('desc') }}</textarea>
                                 <span class="text-danger">{{ $errors->first('desc') }}</span>
                               </div>
                               
@@ -101,6 +101,9 @@
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/flatpickr/flatpickr.css')}}">
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/flatpickr/custom-flatpickr.css')}}">
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/select2/select2.min.css')}}">
+ 
+  {{-- <link rel="stylesheet" href="{{ asset('public/plugins/editors/markdown/simplemde.min.css') }}"> --}}
+<link rel="stylesheet" href="{{ asset('public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
 
     
 @endsection
@@ -108,7 +111,12 @@
   <script src="{{ asset('public/plugins/flatpickr/flatpickr.js') }}"></script>
   <script src="{{ asset('public/plugins/flatpickr/custom-flatpickr.js') }}"></script>
   <script src="{{ asset('public/plugins/select2/select2.min.js') }}"></script>
-<script>
+ 
+<script src="{{ asset('public/plugins/editors/markdown/simplemde.min.js')}}"></script>
+<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+  
+<script> 
+
 
 
     var f1 = flatpickr(document.getElementById('basicFlatpickr'));
@@ -140,6 +148,11 @@
             
         });
     });
+     
+</script>
+<script>
+CKEDITOR.replace( 's_desc' );
+CKEDITOR.replace( 'desc' );
 </script>
 
 @endsection

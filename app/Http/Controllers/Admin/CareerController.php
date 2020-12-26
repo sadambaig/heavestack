@@ -85,6 +85,7 @@ class CareerController extends Controller
         return view('admin.career.update',compact('job'));
     }
     public function update(Request $request){
+    	
     	$jobs=Job::findOrFail($request->id);
     	$validateData=$request->validate([
     		'title'=>'required',

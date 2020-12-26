@@ -20,6 +20,8 @@ class UserSeeder extends Seeder
         	'username'=>'manager',
         	'email'=>'manager@manager.com',
         	'password'=>Hash::make('123456'),
+            'image'=>'abc.jpg',
+            'status'=>'1',
         	
         ]);
         $role=['role_id'=>1];
@@ -31,6 +33,8 @@ class UserSeeder extends Seeder
             'username'=>'admin',
             'email'=>'admin@admin.com',
             'password'=>Hash::make('123456'),
+            'image'=>'abc.jpg',
+            'status'=>'1',
             
         ]);
         $role=['role_id'=>2];
@@ -41,6 +45,7 @@ class UserSeeder extends Seeder
             'username'=>'employee',
             'email'=>'employee@employee.com',
             'password'=>Hash::make('123456'),
+            'image'=>'abc.jpg',
             
         ]);
         $role=['role_id'=>3];
@@ -50,6 +55,7 @@ class UserSeeder extends Seeder
             'username'=>'intern',
             'email'=>'intern@intern.com',
             'password'=>Hash::make('123456'),
+            'image'=>'abc.jpg',
             
         ]);
         $role=['role_id'=>4];

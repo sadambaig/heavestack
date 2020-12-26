@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                   Sorry your account is inactive please contact Adminstration
                 </div>
             </div>
         </div>

@@ -42,8 +42,8 @@
                               <div class="form-group">
                                 <label>Job Type</label>
                                   <select name="type" class="form-control">
-                                      <option value="Employee" @if($job->type=='Employee') selected @endif>Employee</option>
-                                      <option value="Internee" @if($job->type=='Internee') selected @endif>Internee</option>
+                                      <option value="Job" @if($job->type=='Job') selected @endif>Job</option>
+                                      <option value="Internship" @if($job->type=='Internship') selected @endif>Internship</option>
                                   </select>
                                   <span class="text-danger">{{ $errors->first('type') }}</span>
                               </div>
@@ -64,13 +64,13 @@
                                   <span class="text-danger">{{ $errors->first('last_date') }}</span>
                               </div>
                               <div class="form-group">
-                                  <label>Short Description</label>
-                                  <textarea name="s_desc" class="form-control">{{ $job->s_desc }}</textarea>
+                                  <label>Requirements</label>
+                                  <textarea name="s_desc" id="req" class="form-control">{!! $job->s_desc !!}</textarea>
                                   <span class="text-danger">{{ $errors->first('s_desc') }}</span>
                               </div>
                               <div class="form-group">
-                                <label>Job Description</label>
-                                <textarea name="desc" class="form-control">{{ $job->desc }}</textarea>
+                                <label>Responsibilities</label>
+                                <textarea name="desc" id="res" class="form-control">{!! $job->desc !!}</textarea>
                                 <span class="text-danger">{{ $errors->first('desc') }}</span>
                               </div>
                               
@@ -104,6 +104,7 @@
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/flatpickr/flatpickr.css')}}">
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/flatpickr/custom-flatpickr.css')}}">
  <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/select2/select2.min.css')}}">
+ 
 
     
 @endsection
@@ -111,6 +112,9 @@
   <script src="{{ asset('public/plugins/flatpickr/flatpickr.js') }}"></script>
   <script src="{{ asset('public/plugins/flatpickr/custom-flatpickr.js') }}"></script>
   <script src="{{ asset('public/plugins/select2/select2.min.js') }}"></script>
+  <script src="{{ asset('public/plugins/editors/markdown/simplemde.min.js')}}"></script>
+   <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+  
 <script>
 
 
@@ -144,5 +148,29 @@
         });
     });
 </script>
-
+<script>
+  new SimpleMDE({
+    element: document.getElementById("req"),
+    spellChecker: false,
+    autosave: {
+        enabled: true,
+        unique_id: "req",
+    },
+});
+  new SimpleMDE({
+    element: document.getElementById("res"),
+    spellChecker: false,
+    autosave: {
+        enabled: true,
+        unique_id: "res",
+    },
+});
+     // $(function() {
+     //     $('.textarea').wysihtml5();
+     // });
+</script>
+<script>
+CKEDITOR.replace( 's_desc' );
+CKEDITOR.replace( 'desc' );
+</script>
 @endsection
