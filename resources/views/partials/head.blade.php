@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/toast/toast.css') }}">
     
     <link rel="stylesheet" type="text/css" href="{{ asset('public/fontawesome/css/all.css') }}">
+    
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/plugins/font-icons/fontawesome/css/fontawesome.css') }}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     @yield('styles')
 

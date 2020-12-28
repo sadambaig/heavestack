@@ -11,7 +11,7 @@
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
 							<ul class="breadcrumb_nav ul_li_right clearfix">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="{{ url('/') }}">Home</a></li>
 								<li>Careers</li>
 							</ul>
 						</div>
@@ -20,7 +20,7 @@
 			</section>
 <section class="shop_section sec_ptb_130 bg_gray clearfix">
 				<div class="container">
-					<div class="row justify-content-lg-between">
+					<div class="row ">
 						@foreach($jobs as $job)
 						<div class="col-lg-4 col-md-6 col-sm-12">
 							<div class="inner-career-block bor rounded p-3 bg-white shadow">

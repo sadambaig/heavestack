@@ -1,18 +1,19 @@
 @extends('front_partials.main')
 @section('content')
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
 <!-- breadcrumb_section - start
 			================================================== -->
 			<section class="breadcrumb_section d-flex align-items-center clearfix" style="background-image: url(./public/front/images/bgcrumbs.jpg); background-repeat: no-repeat;background-position: center;background-size: cover;">
 				<div class="container">
 					<div class="row align-items-center justify-content-lg-between">
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-delay=".1s">
-							<h3 class="page_title mb-0">Careers</h3>
+							<h3 class="page_title mb-0">Contact</h3>
 						</div>
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 wow fadeInRight" data-wow-delay=".1s">
 							<ul class="breadcrumb_nav ul_li_right clearfix">
-								<li><a href="index.html">Home</a></li>
-								<li>Careers</li>
+								<li><a href="{{ url('/') }}">Home</a></li>
+								<li>Contact</li>
 							</ul>
 						</div>
 					</div>
@@ -90,7 +91,10 @@
 										<span class="input_title">Leave A Message</span>
 										<textarea name="message" placeholder="Write Your Message"></textarea>
 									</div>
-
+									<div class="form-group">
+										  <div class="g-recaptcha" data-sitekey="6Lf3LxUaAAAAABn4Kd4qycSPuhzihZcHOIw2-BFo"></div>
+									</div>
+									<p>&nbsp;</p>
 									<button type="submit" class="custom_btn bg_default_orange wow fadeInUp2" data-wow-delay=".5s">
 										send message 
 										<span><i class="fal fa-arrow-right"></i></span>
@@ -112,4 +116,8 @@
 				<div id="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="12" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia." data-mlat="40.701083" data-mlon="-74.1522848">
 				</div>
 			</div> --}}
+			
+		
+   
+
 @endsection

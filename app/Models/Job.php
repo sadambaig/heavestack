@@ -31,4 +31,7 @@ class Job extends Model
     public function user(){
     	return $this->belongsTo('App\Models\User');
     }
+    public function applications(){
+        return $this->hasMany('App\Model\Application');
+    }
 }

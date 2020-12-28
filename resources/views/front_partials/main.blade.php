@@ -2,7 +2,7 @@
 		<!-- backtotop - end -->
 		<!-- header_section - start
 		================================================== -->
-		<header class="header_section sticky_header secondary_header clearfix">
+		<header class="header_section sticky_header secondary_header clearfix" id="topNav">
 			@include('front_partials.top_nav')
 			@include('front_partials.navigation')
 

@@ -29,7 +29,7 @@
 						<div class="col-lg-7">
 							<nav class="main_menu clearfix">
 								<ul class="ul_li_center clearfix">
-									<li>
+									<li class="{{ (Request::segments(0)=='')?'active':'' }}">
 										<a href="{{ url('/') }}">Home</a>
 										<!-- <ul class="submenu">
 											<li class="has_child">
@@ -104,13 +104,15 @@
 											<li><a href="faq.html">F.A.Q.</a></li>
 										</ul> -->
 									<!-- </li> -->
-									<li class="active">
+								
+									<li class="{{ (Request::segment(1)=='career')?'active':'' }}">
 										<a href="{{ route('front.career') }}">Careers</a>
 										<!-- <ul class="submenu">
 											<li><a href="shop.html">Our Shop</a></li>
 											<li><a href="shop_details.html">Shop Details</a></li>
 										</ul> -->
 									</li>
+									<li class="{{ (Request::segment(1)=='blog')?'active':'' }}"><a href="{{ route('front.blog') }}">Blog</a></li>
 									<!-- <li>
 										<a href="blog_standard.html">Blog</a>
 									</li> -->
@@ -122,7 +124,8 @@
 											<li><a href="blog_details.html">Blog Details</a></li>
 										</ul>
 									</li> -->
-									<li><a href="{{ route('front.contact') }}">Conatct</a></li>
+									<li class="{{ (Request::segment(1)=='contact')?'active':'' }}">
+										<a href="{{ route('front.contact') }}">Conatct</a></li>
 								</ul>
 							</nav>
 						</div>

@@ -29,7 +29,7 @@ body {
   line-height: 1.867;
   font-style: normal;
   color: #757575;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   background-color: #ffffff;
   text-rendering: optimizelegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -1988,7 +1988,8 @@ button {
   background-color: #f5f6fa;
 }
 .footer_section.bg_black {
-  background-color: #212121;
+  /*background-color: #212121;*/
+  background-image: linear-gradient(180deg,rgba(255,167,0,0.85) 0%,rgba(30,61,126,0.85) 100%),url(../images/footer_banner.jpg)!important;
 }
 
 .footer_widget_title {

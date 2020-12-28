@@ -18,7 +18,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
                         <div class="widget-four">
                             <div class="widget-heading">
-                                <h5 class="">Visitors by Browser</h5>
+                                <h5 class="">Users</h5>
                             </div>
                             <div class="widget-content">
                                 <div class="vistorsBrowser">
@@ -28,8 +28,8 @@
                                         </div>
                                         <div class="w-browser-details">
                                             <div class="w-browser-info">
-                                                <h6>Chrome</h6>
-                                                <p class="browser-count">65%</p>
+                                                <h6>Users</h6>
+                                                <p class="browser-count">{{ $user }}</p>
                                             </div>
                                             <div class="w-browser-stats">
                                                 <div class="progress">
@@ -46,8 +46,8 @@
                                         <div class="w-browser-details">
                                             
                                             <div class="w-browser-info">
-                                                <h6>Safari</h6>
-                                                <p class="browser-count">25%</p>
+                                                <h6>Applications</h6>
+                                                <p class="browser-count">{{ $app }}</p>
                                             </div>
 
                                             <div class="w-browser-stats">
@@ -67,8 +67,8 @@
                                         <div class="w-browser-details">
                                             
                                             <div class="w-browser-info">
-                                                <h6>Others</h6>
-                                                <p class="browser-count">15%</p>
+                                                <h6>Jobs</h6>
+                                                <p class="browser-count">{{ $job }}</p>
                                             </div>
 
                                             <div class="w-browser-stats">

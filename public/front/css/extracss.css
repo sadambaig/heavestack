@@ -24,8 +24,29 @@
 			    color: white !important;
 			    background-color: black;
 			}
-
-
+			.circularimg{
+				width: 30%;margin-left: 10px;
+			}
+			#firstblock{
+	    line-height: 6;
+    border-radius: 10px;
+    height: 277px;
+    padding: 66px 0px 0px 40px;
+     border: 1px solid rgba(40, 0, 0, 0.2);
+     box-shadow: 0 2px 21px rgba(49, 33, 171, 0.1);
+}
+#technologyicon{
+	font-size: 63px;
+    padding-left: 9px;
+}
+#firstblock:hover{
+	    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 21px rgba(49, 33, 171, 0.6);
+    min-height: 255px;
+}
+.plethora{
+	font-size: 18px;
+}
 
 /*media querries-----------------------------------------------------------------------------------------------*/
 			@media (max-width: 499px){
@@ -83,40 +104,121 @@
 				margin-left: 20px;
 			}
 			.touches__item {
-    max-width: 403px !important;
-    width: 100%;
-    padding: 40px;
-    box-shadow: 0 0 11px rgba(0,0,0,.1);
-    border-radius: 10px;
-    margin-right: 20px;
-    background-color: #fff;
-    transition: transform .2s linear;
-}
-.mini-slide-text a {
-    color: #0e0e0e;
-    font-size: 11px !important;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 10px !important;
-    background-color: orange;
-    border-radius: 6px;
-    margin: 0px 5px;
-    overflow-y: hidden;
-}
-}
+		    max-width: 403px !important;
+		    width: 100%;
+		    padding: 40px;
+		    box-shadow: 0 0 11px rgba(0,0,0,.1);
+		    border-radius: 10px;
+		    margin-right: 20px;
+		    background-color: #fff;
+		    transition: transform .2s linear;
+		}
+		.mini-slide-text a {
+		    color: #0e0e0e;
+		    font-size: 11px !important;
+		    font-weight: 600;
+		    text-decoration: none;
+		    padding: 10px !important;
+		    background-color: orange;
+		    border-radius: 6px;
+		    margin: 0px 5px;
+		    overflow-y: hidden;
+		}
 
+}
+@media (max-width: 374px){
+	.circularimg {
+			    width: 20%;
+			    margin-left: auto;
+			    margin-right: auto;
+			}
+						.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 40% !important;
+			    color: #534e4e;
+			}
+			#rightblockcareers{
+				text-align: center;
+			}
+			#linkedinicon {
+			    margin-top: 12px;
+			    margin-left: 2px !important;
+			    color: white;
+			}
+			#facebookicon {
+			    margin-top: 12px;
+			    margin-left: 0px !important;
+			    color: white;
+			}
+}
+@media screen and (min-width: 375px) and (max-width: 424px){
+	.circularimg {
+			    width: 20%;
+			    margin-left: auto;
+			    margin-right: auto;
+			}
+						.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 33% !important;
+			    color: #534e4e;
+			}
+			#rightblockcareers{
+				text-align: center;
+			}
+			#linkedinicon {
+			    margin-top: 12px;
+			    margin-left: 2px !important;
+			    color: white;
+			}
+			#facebookicon {
+			    margin-top: 12px;
+			    margin-left: 0px !important;
+			    color: white;
+			}
+}
+@media screen and (min-width: 425px) and (max-width: 499px){
+	.circularimg {
+			    width: 20%;
+			    margin-left: auto;
+			    margin-right: auto;
+			}
+						.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 29% !important;
+			    color: #534e4e;
+			}
+			#rightblockcareers{
+				text-align: center;
+			}
+			#linkedinicon {
+			    margin-top: 12px;
+			    margin-left: 2px !important;
+			    color: white;
+			}
+			#facebookicon {
+			    margin-top: 12px;
+			    margin-left: 0px !important;
+			    color: white;
+			}
+}
 
 @media screen and (min-width: 500px) and (max-width: 575px){
 	#logov7aa{
 					height: 100%;
     				width: 58% !important;
 				}
+			
 }
 @media screen and (min-width: 576px) and (max-width: 768px){
 	#logov7aa{
-					height: 100%;
-    				width: 40% !important;
-				}
+	height: 100%;
+	width: 40% !important;
+}
+
+
 }
 
 /*2 query*/
@@ -169,6 +271,48 @@
 			    display: flex;
 			    overflow-x: scroll;
 			    -webkit-overflow-scrolling: touch;
+			}
+				.fa-paperclip {
+			    margin-left: 10px !important;
+			    margin-top: 10px !important;
+			    font-size: 19px !important;
+			    color: #ffffff;
+			}
+			.papperclipicon {
+			    position: absolute;
+			    top: 56% !important;
+			    left: 84% !important;
+			    background: #918f89;
+			    width: 9% !important;
+			    height: 8% !important;
+			    border-radius: 50%;
+			}
+			#sendarrow{
+					width: 100% !important
+				}
+				.circularimg {
+			    width: 20%;
+			    margin-left: auto;
+			    margin-right: auto;
+			}
+						.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 25% !important;
+			    color: #534e4e;
+			}
+			#rightblockcareers{
+				text-align: center;
+			}
+			#linkedinicon {
+			    margin-top: 12px;
+			    margin-left: 2px !important;
+			    color: white;
+			}
+			#facebookicon {
+			    margin-top: 12px;
+			    margin-left: 0px !important;
+			    color: white;
 			}
 }
 
@@ -256,7 +400,31 @@
 			    font-size: 34px;
 			    margin: 0 0 0.5rem;
 			}
+						.circularimg {
+			    width: 20%;
+			    margin-left: auto;
+			    margin-right: auto;
 			}
+						.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 25% !important;
+			    color: #534e4e;
+			}
+			#rightblockcareers{
+				text-align: center;
+			}
+			#linkedinicon {
+			    margin-top: 12px;
+			    margin-left: 2px !important;
+			    color: white;
+			}
+			#facebookicon {
+			    margin-top: 12px;
+			    margin-left: 0px !important;
+			    color: white;
+			}
+}
 
 
 			@media screen and (min-width: 992px) and (max-width: 1199px){
@@ -312,6 +480,12 @@
 			    font-size: 19px;
 			    margin: 0 0 14px;
 			    padding-left: 20px;
+			}
+					.colsps {
+			    font-size: 12px !important;
+			    border-bottom: 1px dashed;
+			    width: 38% !important;
+			    color: #534e4e;
 			}
 }
 
@@ -911,19 +1085,15 @@
 		    margin-left: -18px;
 	}
 	.mini-article-card-title p{
-			    	    word-spacing: 0px;
-			    	    line-height: 20px;
-    					margin-top: 7px;
-    					font-size: 14px;
-    					text-align: center;
-					}
-					.mini-article-card-title h2{
-						text-align: center;
-					}
-
-    .bor{
-    	border: 3px solid #edebeb;
-    }
+	    word-spacing: 0px;
+	    line-height: 20px;
+		margin-top: 7px;
+		font-size: 14px;
+		text-align: center;
+	}
+	.mini-article-card-title h2{
+		text-align: center;
+	}
     .inner-career-block a{
     	color: gray;
     	text-decoration: none;
@@ -934,26 +1104,93 @@
     .leftblockcareers h4{
     	color: skyblue;
     }
+    .fa-chevron-down {
+	  transition: transform .2s;
+	}
+	.colsps{
+	font-size: 15px;
+    border-bottom: 1px dashed;
+    width: 38%;
+    color: #534e4e;
+	}
+	.fa-chevron-down.active {
+	  transform: rotateZ(180deg);
+	}
+	#rightblockcareers {
+    margin-right: -60px;
+	}
+	.same-primary-color{
+		background-color: #ffc107;
+	}
+	.papperclipicon{
+		position: absolute;
+	    top: 64%;
+	    left: 89%;
+	    background: #918f89;
+	    width: 6%;
+	    height: 11%;
+	    border-radius: 50%;
+	}
+	.fa-paperclip{
+		margin-left: 15px;
+	    margin-top: 13px;
+	    font-size: 19px;
+	    color: #ffffff;
+	}
+	input[type="file"] {
+    	display: none;
+	}
+	#sendarrow{
+		width: 75%;
+	}
+	#facebookicon{
+		margin-top: 12px;
+	    margin-left: 15px;
+	    color: white;
+	}
+	#linkedinicon{
+		margin-top: 12px;
+	    margin-left: 14px;
+	    color: white;
+	}
+	.social_icon{
+		width: 40px;
+	    height: 40px;
+	    background-color: #5c5555;
+	    border-radius: 50%;
+	}
 
+	.sticky-top{
+			position: fixed;
+			border-bottom: 2px solid red !important;
+		}
+.circuluatrimage{
+					position: absolute;
+				    top: 40%;
+				    left: 18%;
+				    z-index: -1;
+				}
+				.overlayimgcirculate{
+					position: relative;
+					z-index: 1;
+				}
 
+/*animation code*/
+	#spinning-circle {
+	/*background-image: url(../images/solar.png);*/
+	  animation: rotation 30s infinite linear;
+	      opacity: 0.1;
+    z-index: -1;
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	@keyframes rotation {
+	  from {
+	    transform: rotate(0deg);
+	  }
+	  to {
+	    transform: rotate(359deg);
+	  }
+/*animation end*/
 
 
 

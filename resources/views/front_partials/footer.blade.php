@@ -41,7 +41,7 @@
 								</li>
 							</ul>
 							<div class="copyright_text bg_black">
-								<p class="mb-0">© Copyright 2020 All Right Reserved Design By <a class="author_links" target="_blank" href="https://themeforest.net/user/bdevs">Heave Stack</a></p>
+								<p class="mb-0">© Copyright 2020 All Right Reserved Design By <a class="author_links"  href="{{ url('/') }}">Heave Stack</a></p>
 							</div>
 						</div>
 					</div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\Job;
 use Alert;
+use App\Models\Application;
 class CareerController extends Controller
 {
     //
@@ -131,5 +132,34 @@ class CareerController extends Controller
     	   	return redirect()->back()->with('info','something went wrong please try again');
     	   }
 
+    }
+    public function getApplications(){
+    	$applications=Application::all();
+    	return view('admin.applications.index',compact('applications'));
+    }
+    public function change_pending($id){
+        $app=Application::find($id);
+        $app->status=1;
+        $app->save();
+        $data['title']='Congrats';
+        $data['message']='you are short listed for interview';
+        $mail=\Mail::to($app->email)->send(new \App\Mail\JobStatus($data));
+        return redirect()->back()->with('sucess','status changed');
+
+    }
+    public function change_process($id){
+        $app=Application::find($id);
+        $app->status=2;
+        $app->save();
+        $data['title']='Congrats';
+        $data['message']='select for the post of '.$app->job->title;
+        $mail=\Mail::to($app->email)->send(new \App\Mail\JobStatus($data));
+        return redirect()->back()->with('sucess','status changed');
+
+    }
+    public function application_destroy($id){
+        $app=Application::find($id);
+        $app->delete();
+        return redirect()->back()->with('info','job deleted successfully');
     }
 }
